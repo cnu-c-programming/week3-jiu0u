@@ -11,7 +11,7 @@ void my_sum(char type, int count, ...) {
     }
     else if (type == 'C') {
         for (int i = 0; i < count; i++) {
-            printf("%c", va_arg(ap, char));
+            printf("%c", va_arg(ap, int)); //char(int보다 작은 타입) --> int로 자동 승격..!!
         }
     }
     else if (type == 'D') {
@@ -27,7 +27,7 @@ void my_sum(char type, int count, ...) {
 int main()
 {
     my_sum('S', 2, "Hello", "World");
-    my_sum('C', 3, 'C', 'N', 'U'); 
+    my_sum('C', 3, 'C', 'N', 'U');
     my_sum('D', 4, 10, 20, 30, 40);
 
     return 0;

@@ -5,9 +5,10 @@ void my_sum(char type, int count, ...) {
     va_list ap;
     va_start(ap, count);
     if (type == 'S') {
-        for (int i = 0; i < count; i++) {
-            printf("%s ", va_arg(ap, char*));
+        for (int i = 0; i < count-1; i++) {
+            printf("%s ", va_arg(ap, char*)); //공백 포함 출력
         }
+        printf("%s", va_arg(ap, char*)); //마지막 단어 공백 제외 출력
     }
     else if (type == 'C') {
         for (int i = 0; i < count; i++) {
